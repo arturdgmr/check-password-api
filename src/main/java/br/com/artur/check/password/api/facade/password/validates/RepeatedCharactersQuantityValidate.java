@@ -3,17 +3,28 @@ package br.com.artur.check.password.api.facade.password.validates;
 import br.com.artur.check.password.api.facade.password.ValidateTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 @Component
 public class RepeatedCharactersQuantityValidate extends ValidateTemplate {
     @Override
     public Boolean isValid(String passwd) {
-        //TODO implementar logica caracters repetidos
-        return true;
+        return !hasRepeatedCharacter(passwd);
     }
 
     @Override
     public Boolean getReturnNotValid(String passwd) {
         return false;
+    }
+
+    public static Boolean hasRepeatedCharacter(String passwd) {
+        Map<String, Integer> letters = new HashMap<>();
+        for (int i = 0; i < passwd.length(); i++){
+            char c = passwd.charAt(i);
+            letters.merge(Character.toString(c), 1, Integer::sum);
+        }
+        return letters.values().stream().anyMatch(i -> i > 1);
     }
 }

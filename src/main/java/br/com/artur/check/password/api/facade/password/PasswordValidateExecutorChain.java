@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class PasswordValidateExecutorChain implements ValidateExecutor {
 
+    private final BlankSpaceValidate blankSpaceValidate;
     private final CharacterQuantityValidate characterQuantityValidate;
     private final DigitsQuantityValidate digitsQuantityValidate;
     private final LowerCaseQuantityValidate lowerCaseQuantityValidate;
@@ -18,12 +19,13 @@ public class PasswordValidateExecutorChain implements ValidateExecutor {
 
     @Override
     public Boolean executeValidations(String passwdInfoValidate) {
-        return characterQuantityValidate
+        return blankSpaceValidate
+                .nextValidate(characterQuantityValidate
                 .nextValidate(digitsQuantityValidate
                 .nextValidate(lowerCaseQuantityValidate
                 .nextValidate(repeatedCharactersQuantityValidate
                 .nextValidate(specialCharacterQuantityValidate
-                .doFinally(upperCaseQuantityValidate)))))
+                .doFinally(upperCaseQuantityValidate))))))
                 .execute(passwdInfoValidate);
     }
 }

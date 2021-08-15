@@ -17,6 +17,6 @@ public class PasswordController {
 
     @GetMapping("/teste")
     public boolean isValidPassword(){
-        return passwordFacade.getPasswordConstraints("aAaaaa1aa@");
+        return passwordFacade.getPasswordConstraints("AbTp9!fok");
     }
 }

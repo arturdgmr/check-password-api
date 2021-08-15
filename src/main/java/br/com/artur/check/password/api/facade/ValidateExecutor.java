@@ -1,5 +1,7 @@
 package br.com.artur.check.password.api.facade;
 
+import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
+
 public interface ValidateExecutor {
-    Boolean executeValidations(String passwdInfoValidate);
+    PasswordValidationVO executeValidations(String passwdInfoValidate);
 }

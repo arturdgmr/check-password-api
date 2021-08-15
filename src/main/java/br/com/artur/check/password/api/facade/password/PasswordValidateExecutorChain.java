@@ -1,5 +1,6 @@
 package br.com.artur.check.password.api.facade.password;
 
+import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
 import br.com.artur.check.password.api.facade.ValidateExecutor;
 import br.com.artur.check.password.api.facade.password.validates.*;
 import lombok.RequiredArgsConstructor;
@@ -16,16 +17,18 @@ public class PasswordValidateExecutorChain implements ValidateExecutor {
     private final RepeatedCharactersQuantityValidate repeatedCharactersQuantityValidate;
     private final SpecialCharacterQuantityValidate specialCharacterQuantityValidate;
     private final UpperCaseQuantityValidate upperCaseQuantityValidate;
+    private final PasswordValidatesFinallyStepOK passwordValidatesFinallyStepOK;
 
     @Override
-    public Boolean executeValidations(String passwdInfoValidate) {
+    public PasswordValidationVO executeValidations(String passwdInfoValidate) {
         return blankSpaceValidate
                 .nextValidate(characterQuantityValidate
                 .nextValidate(digitsQuantityValidate
                 .nextValidate(lowerCaseQuantityValidate
                 .nextValidate(repeatedCharactersQuantityValidate
                 .nextValidate(specialCharacterQuantityValidate
-                .doFinally(upperCaseQuantityValidate))))))
+                .nextValidate(upperCaseQuantityValidate
+                .doFinally(passwordValidatesFinallyStepOK)))))))
                 .execute(passwdInfoValidate);
     }
 }

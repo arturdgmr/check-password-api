@@ -1,8 +1,10 @@
 package br.com.artur.check.password.api.facade.password;
 
+import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
+
 public interface Validate {
     Boolean isValid(String passwd);
-    Boolean getReturnNotValid(String passwd);
-    Boolean execute(String passwd);
+    PasswordValidationVO getReturnNotValid();
+    PasswordValidationVO execute(String passwd);
     Validate nextValidate(Validate nextValidate);
 }

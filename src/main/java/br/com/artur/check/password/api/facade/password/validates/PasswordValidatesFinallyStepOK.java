@@ -5,14 +5,19 @@ import br.com.artur.check.password.api.facade.password.ValidateTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CharacterQuantityValidate extends ValidateTemplate {
+public class PasswordValidatesFinallyStepOK extends ValidateTemplate {
     @Override
     public Boolean isValid(String passwd) {
-        return passwd.length() > 8;
+        return true;
     }
 
     @Override
     public PasswordValidationVO getReturnNotValid() {
         return PasswordValidationVO.invalidPassword();
+    }
+
+    @Override
+    public PasswordValidationVO execute(String passwd) {
+        return PasswordValidationVO.validPassword();
     }
 }

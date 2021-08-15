@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class PasswordValidateExecutorChainTest {
 
-    private final BlankSpaceValidate blankSpaceValidate = new BlankSpaceValidate();
+    /*private final BlankSpaceValidate blankSpaceValidate = new BlankSpaceValidate();
     private final CharacterQuantityValidate characterQuantityValidate = new CharacterQuantityValidate();
     private final DigitsQuantityValidate digitsQuantityValidate = new DigitsQuantityValidate();
     private final LowerCaseQuantityValidate lowerCaseQuantityValidate = new LowerCaseQuantityValidate();
@@ -73,5 +73,5 @@ public class PasswordValidateExecutorChainTest {
     public void upperCaseQuantityValidateValidateTest(){
         String passwd = "abcdefgh!@1";
         Assertions.assertFalse(passwordValidateExecutorChain.executeValidations(passwd));
-    }
+    }*/
 }

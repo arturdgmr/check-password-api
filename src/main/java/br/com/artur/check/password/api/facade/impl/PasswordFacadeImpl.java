@@ -1,5 +1,6 @@
 package br.com.artur.check.password.api.facade.impl;
 
+import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
 import br.com.artur.check.password.api.facade.PasswordFacade;
 import br.com.artur.check.password.api.facade.ValidateExecutor;
 import org.springframework.stereotype.Component;
@@ -14,7 +15,7 @@ public class PasswordFacadeImpl implements PasswordFacade {
     }
 
     @Override
-    public Boolean getPasswordConstraints(String passwd) {
+    public PasswordValidationVO getPasswordConstraints(String passwd) {
         return validateExecutor.executeValidations(passwd);
     }
 }

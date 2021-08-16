@@ -26,7 +26,7 @@ public class PasswordControllerTest {
 
     @Test
     @DisplayName("Should return true for password validation")
-    public void getValidPassword() throws Exception {
+    public void getValidPasswordTest() throws Exception {
         String passwd = "ASDfghzxc@1";
 
         mockMvc.perform(get(URI.concat("/"+passwd))
@@ -37,7 +37,7 @@ public class PasswordControllerTest {
 
     @Test
     @DisplayName("Should return false for password no digits")
-    public void getPasswordWithoutDigits() throws Exception {
+    public void getPasswordWithoutDigitsTest() throws Exception {
         String passwd = "AbTp!fokz";
 
         mockMvc.perform(get(URI.concat("/"+passwd))
@@ -48,7 +48,7 @@ public class PasswordControllerTest {
 
     @Test
     @DisplayName("Should return false for password no lowercase letters")
-    public void getPasswordWithoutLowerCase() throws Exception {
+    public void getPasswordWithoutLowerCaseTest() throws Exception {
         String passwd = "ABTP!FOK1";
 
         mockMvc.perform(get(URI.concat("/"+passwd))
@@ -59,7 +59,7 @@ public class PasswordControllerTest {
 
     @Test
     @DisplayName("Should return false for password no special characters")
-    public void getPasswordWithoutSpecialCharacter() throws Exception {
+    public void getPasswordWithoutSpecialCharacterTest() throws Exception {
         String passwd = "AbTp9yfok";
 
         mockMvc.perform(get(URI.concat("/"+passwd))
@@ -70,7 +70,7 @@ public class PasswordControllerTest {
 
     @Test
     @DisplayName("Should return false for password no uppercase letters")
-    public void getPasswordWithoutUpperCase() throws Exception {
+    public void getPasswordWithoutUpperCaseTest() throws Exception {
         String passwd = "abtp9!fok";
 
         mockMvc.perform(get(URI.concat("/"+passwd))
@@ -81,7 +81,7 @@ public class PasswordControllerTest {
 
     @Test
     @DisplayName("Should return false for password with repeated character")
-    public void getPasswordWithRepeatedCharacter() throws Exception {
+    public void getPasswordWithRepeatedCharacterTest() throws Exception {
         String passwd = "AbTp9!foA";
 
         mockMvc.perform(get(URI.concat("/"+passwd))
@@ -92,7 +92,7 @@ public class PasswordControllerTest {
 
     @Test
     @DisplayName("Should return false for password with insufficient number of characters")
-    public void getPasswordWithInsufficientNumberCharacters() throws Exception {
+    public void getPasswordWithInsufficientNumberCharactersTest() throws Exception {
         String passwd = "Tp9!foAx";
 
         mockMvc.perform(get(URI.concat("/"+passwd))

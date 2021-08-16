@@ -34,7 +34,4 @@ public class PasswordControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("isValid").value(true));
     }
-
-
-
 }

@@ -34,4 +34,15 @@ public class PasswordControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("isValid").value(true));
     }
+
+    @Test
+    @DisplayName("Should return false for password validation and status 200")
+    public void getInvalidPassword() throws Exception {
+        String passwd = "aa";
+
+        mockMvc.perform(get(URI.concat("/"+passwd))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("isValid").value(false));
+    }
 }

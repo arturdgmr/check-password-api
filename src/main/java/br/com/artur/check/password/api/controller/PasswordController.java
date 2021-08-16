@@ -4,6 +4,8 @@ import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
 import br.com.artur.check.password.api.exceptions.BusinessException;
 import br.com.artur.check.password.api.exceptions.ErrorCodes;
 import br.com.artur.check.password.api.facade.PasswordFacade;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,10 @@ public class PasswordController {
     private final PasswordFacade passwordFacade;
 
     @GetMapping(path = {"/validation/{passwd}"})
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Sucesso"),
+            @ApiResponse(responseCode = "502", description = "Falha de conex\u00E3o com o servi\u00E7o")
+    })
     public ResponseEntity<PasswordValidationVO> isValidPassword(@PathVariable final String passwd){
         try {
             return ResponseEntity.ok(passwordFacade.getPasswordConstraints(passwd));

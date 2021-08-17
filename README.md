@@ -1,7 +1,6 @@
 # Check Password API 
-http://localhost:8080/swagger-ui.html#/
 
-http://ec2-65-2-57-128.ap-south-1.compute.amazonaws.com:8080/swagger-ui.html#/
+
 ## Rodando localmente via Docker
 
 
@@ -10,6 +9,7 @@ http://ec2-65-2-57-128.ap-south-1.compute.amazonaws.com:8080/swagger-ui.html#/
 docker build -f Dockerfile -t check-password-api .
 docker run -p 8080:8080 check-password-api
 ```
+Swagger local: http://localhost:8080/swagger-ui.html#/
 ## Acessando API via AWS
 
 Em caso de problema ao rodar aplicação localmente, considere acessar via aws: http://ec2-65-2-57-128.ap-south-1.compute.amazonaws.com:8080/swagger-ui.html#/

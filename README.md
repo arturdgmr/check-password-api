@@ -25,6 +25,8 @@ Em caso de problema ao rodar aplicação localmente, considere acessar via aws: 
                       |--- vo
            |--- exceptions
            |--- facade
+                      |--- password
+                                |--- validates
 ```                                                       
 
 ## Separar as validação em classes isoladas usando  `Chain Responsibility`

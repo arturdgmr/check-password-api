@@ -25,7 +25,7 @@ Em caso de problema ao rodar aplicação localmente, considere acessar via aws: 
                       |--- vo
            |--- exceptions
            |--- service
-                      |--- password
+                      |--- passwordvalidation
                                 |--- validates
 ```                                                       
 

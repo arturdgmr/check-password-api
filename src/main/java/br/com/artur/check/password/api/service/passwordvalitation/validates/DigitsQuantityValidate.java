@@ -1,14 +1,14 @@
-package br.com.artur.check.password.api.service.password.validates;
+package br.com.artur.check.password.api.service.passwordvalitation.validates;
 
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
-import br.com.artur.check.password.api.service.password.ValidateTemplate;
+import br.com.artur.check.password.api.service.passwordvalitation.ValidateTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LowerCaseQuantityValidate extends ValidateTemplate {
+public class DigitsQuantityValidate extends ValidateTemplate {
     @Override
     public Boolean isValid(String passwd) {
-        return contains(passwd, i -> Character.isLetter(i) && Character.isLowerCase(i));
+        return contains(passwd, Character::isDigit);
     }
 
     @Override

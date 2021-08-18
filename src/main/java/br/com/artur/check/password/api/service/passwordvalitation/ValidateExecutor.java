@@ -1,4 +1,4 @@
-package br.com.artur.check.password.api.service.password;
+package br.com.artur.check.password.api.service.passwordvalitation;
 
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
 

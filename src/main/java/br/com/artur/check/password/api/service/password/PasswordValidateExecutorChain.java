@@ -1,7 +1,6 @@
 package br.com.artur.check.password.api.service.password;
 
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
-import br.com.artur.check.password.api.service.ValidateExecutor;
 import br.com.artur.check.password.api.service.password.validates.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

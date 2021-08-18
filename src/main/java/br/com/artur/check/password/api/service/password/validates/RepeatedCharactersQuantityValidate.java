@@ -1,7 +1,7 @@
-package br.com.artur.check.password.api.facade.password.validates;
+package br.com.artur.check.password.api.service.password.validates;
 
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
-import br.com.artur.check.password.api.facade.password.ValidateTemplate;
+import br.com.artur.check.password.api.service.password.ValidateTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

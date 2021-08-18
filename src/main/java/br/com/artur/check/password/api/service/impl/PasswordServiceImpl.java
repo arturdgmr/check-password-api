@@ -1,16 +1,16 @@
-package br.com.artur.check.password.api.facade.impl;
+package br.com.artur.check.password.api.service.impl;
 
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
-import br.com.artur.check.password.api.facade.PasswordFacade;
-import br.com.artur.check.password.api.facade.ValidateExecutor;
+import br.com.artur.check.password.api.service.PasswordService;
+import br.com.artur.check.password.api.service.ValidateExecutor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PasswordFacadeImpl implements PasswordFacade {
+public class PasswordServiceImpl implements PasswordService {
 
     ValidateExecutor validateExecutor;
 
-    public PasswordFacadeImpl(ValidateExecutor validateExecutor){
+    public PasswordServiceImpl(ValidateExecutor validateExecutor){
         this.validateExecutor = validateExecutor;
     }
 

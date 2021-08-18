@@ -3,7 +3,7 @@ package br.com.artur.check.password.api.controller;
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
 import br.com.artur.check.password.api.exceptions.BusinessException;
 import br.com.artur.check.password.api.exceptions.ErrorCodes;
-import br.com.artur.check.password.api.facade.PasswordFacade;
+import br.com.artur.check.password.api.service.PasswordService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class PasswordController {
     public static final String URL_API = "/password";
 
-    private final PasswordFacade passwordFacade;
+    private final PasswordService passwordFacade;
 
     @GetMapping(path = {"/validation/{passwd}"})
     @ApiResponses(value = {

@@ -1,14 +1,14 @@
-package br.com.artur.check.password.api.facade.password.validates;
+package br.com.artur.check.password.api.service.password.validates;
 
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
-import br.com.artur.check.password.api.facade.password.ValidateTemplate;
+import br.com.artur.check.password.api.service.password.ValidateTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DigitsQuantityValidate extends ValidateTemplate {
+public class BlankSpaceValidate extends ValidateTemplate {
     @Override
     public Boolean isValid(String passwd) {
-        return contains(passwd, Character::isDigit);
+        return !passwd.contains(" ");
     }
 
     @Override

@@ -1,14 +1,14 @@
-package br.com.artur.check.password.api.facade.password.validates;
+package br.com.artur.check.password.api.service.password.validates;
 
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
-import br.com.artur.check.password.api.facade.password.ValidateTemplate;
+import br.com.artur.check.password.api.service.password.ValidateTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UpperCaseQuantityValidate extends ValidateTemplate {
+public class CharacterQuantityValidate extends ValidateTemplate {
     @Override
     public Boolean isValid(String passwd) {
-        return contains(passwd, i -> Character.isLetter(i) && Character.isUpperCase(i));
+        return passwd.length() > 8;
     }
 
     @Override

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class PasswordController {
     public static final String URL_API = "/password";
 
-    private final PasswordService passwordFacade;
+    private final PasswordService passwordService;
 
     @GetMapping(path = {"/validation/{passwd}"})
     @ApiResponses(value = {
@@ -25,7 +25,7 @@ public class PasswordController {
     })
     public ResponseEntity<PasswordValidationVO> isValidPassword(@PathVariable final String passwd){
         try {
-            return ResponseEntity.ok(passwordFacade.getPasswordConstraints(passwd));
+            return ResponseEntity.ok(passwordService.getPasswordConstraints(passwd));
         } catch (Exception error) {
             throw new BusinessException("Não foi possível realizar a validação.", ErrorCodes.GENERIC_ERROR);
         }

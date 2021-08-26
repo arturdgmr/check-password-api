@@ -3,9 +3,9 @@ package br.com.artur.check.password.api.service.impl;
 import br.com.artur.check.password.api.controller.vo.PasswordValidationVO;
 import br.com.artur.check.password.api.service.PasswordService;
 import br.com.artur.check.password.api.service.passwordvalitation.ValidateExecutor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class PasswordServiceImpl implements PasswordService {
 
     ValidateExecutor validateExecutor;
